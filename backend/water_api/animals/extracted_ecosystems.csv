@@ -1,0 +1,84 @@
+E_CODE,EcosystemName,EcosystemType,Location,Salinity,NorthernLat,NrangeNS,SouthernLat,SrangeNS,WesternLat,WrangeEW,EasternLat,ErangeEW,Climate,TotalCount,TotalFamCount,TotalComplete,LatDegFill,LatMinFill,NorthSouthFill,LongDegFill,LongMinFill,EastWestFill
+1151,Alabama River,River (basin),"Alabama, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1713,Allegheny River,River (basin),"Pennsylvania and New York, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1723,Altamaha River,River (basin),"Georgia, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,5,1,0,nan,nan,None,nan,nan,None
+1153,Apalachicola River,River (basin),"Florida and Georgia, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,7,1,0,nan,nan,None,nan,nan,None
+56,Arkansas River,River (basin),Southwest central USA,freshwater,40,N,33,N,107,w,91,w,subtropical,35,9,0,35,28,N,95,2,W
+578,Atlantic Complex,River (basin),North America,freshwater,nan,None,nan,None,nan,None,nan,None,Temperate,40,16,0,nan,nan,None,nan,nan,None
+8,Atlantic Ocean,Sea/Bay/Gulf,"FAO areas 27 Or 21 Or 31 Or 34 Or 41 Or 47 Or 48, i.e., excluding the Mediterranean.",saltwater,90,N,70,S,97,W,20,E,Subtropical,4473,355,0,20,0,N,40,0,W
+1753,Bayou Pierre River,River (basin),"Mississippi, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1175,Bear River,River (basin),"Utah, Idaho, Wyoming in USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,2,1,0,nan,nan,None,nan,nan,None
+1752,Big Black River,River (basin),"Mississippi, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1744,Black Warrior River,River (basin),"Alabama, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,5,1,0,nan,nan,None,nan,nan,None
+1145,Brazos River,River (basin),"Texas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,4,2,0,nan,nan,None,nan,nan,None
+1812,Cahaba River,River (basin),"Alabama, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,4,1,0,nan,nan,None,nan,nan,None
+132,California Current,Sea/Bay/Gulf,"LME SAU No 3. Northeastern Pacific, from Canadian boarder to tip of Baja California. LME2002, LME2006, SAU 2008.",saltwater,45,N,23,N,130,W,110,W,temperate,799,198,-1,33,0,N,122,0,W
+1731,Cape Fear River,River (basin),"North Carolina, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1408,Carolinian,Sea/Bay/Gulf,None,saltwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1754,Chattahoochee River,River (basin),"Georgia, Alabama and Florida in USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,2,0,nan,nan,None,nan,nan,None
+1071,Chesapeake Bay,Sea/Bay/Gulf,"Atlantic East coast of USA. The bay is shared between 2 states: Maryland, Virginia, while the complete drainage basin covers 4 more states: Delaware, New York, Pennsylvania, West Virginia.",saltwater,40,N,36,N,78,W,75,W,None,208,91,-1,37,30,N,76,7,W
+1709,Cheyenne River,River (basin),USA,None,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1755,Choctawhatchee River,River (basin),"Alabama and Florida, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1730,Chowan River,River (basin),"North Carolina and Virginia, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,2,1,0,nan,nan,None,nan,nan,None
+1734,Clear Lake,Lake,"California, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+573,Colorado Complex,River (basin),North America,freshwater,nan,None,nan,None,nan,None,nan,None,Temperate,29,6,0,nan,nan,None,nan,nan,None
+57,Colorado River,River (basin),Southwest USA,freshwater,41,N,31,N,116,W,105,W,temperate,66,16,0,36,4,N,112,0,W
+59,Columbia,River (basin),Southwest Canada and northwest USA,freshwater,53,N,45,N,124,W,115,W,boreal,35,10,0,47,0,N,120,0,W
+1161,Connecticut River,River (basin),"Connecticut, Massachusetts, Vermont and New Hampshire in the USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1188,Coosa River,River (basin),"Alabama, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,7,1,0,nan,nan,None,nan,nan,None
+1150,Cumberland River,River (basin),Kentucky and Tennessee in the USA,freshwater,nan,None,nan,None,nan,None,nan,None,None,10,3,0,nan,nan,None,nan,nan,None
+1782,Devils River,River (basin),"Texas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1732,Edisto River,River (basin),"North Carolina, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,2,0,nan,nan,None,nan,nan,None
+1728,Escambia River,River (basin),"Alabama and Florida, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,7,3,0,nan,nan,None,nan,nan,None
+1436,Floridian,Sea/Bay/Gulf,None,saltwater,nan,None,nan,None,nan,None,nan,None,None,4,4,0,nan,nan,None,nan,nan,None
+1714,Genesee,River (basin),Pennsylvania and New York in the United States,freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1136,Gila River,River (basin),Arizona and New Mexico in USA,freshwater,nan,None,nan,None,nan,None,nan,None,None,4,1,0,nan,nan,None,nan,nan,None
+572,Great Basin Complex,River (basin),North America,freshwater,nan,None,nan,None,nan,None,nan,None,Subtropical,29,8,0,nan,nan,None,nan,nan,None
+151,Great Lakes,Lake,North America,freshwater,49,N,41,N,93,W,76,W,temperate,147,29,0,45,33,N,85,26,W
+1715,Great Miami,River (basin),Ohio and Indiana in the United States,freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1137,Green River,River (basin),"Wyoming, Colorado, Utah in USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,4,1,0,nan,nan,None,nan,nan,None
+1720,Guadalupe River,River (basin),"Texas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+369,Gulf of Maine,Sea/Bay/Gulf,Atlantic Ocean,saltwater,44,N,42,N,71,W,66,W,Temperate,206,113,0,42,59,N,68,16,W
+144,Gulf of Mexico,Sea/Bay/Gulf,"LME SAU No 5. Western Central Atlantic, between Mexico and Florida; comprises part of what is known as the American Mediterranean region (Ref. 27768). LME2002, LME2006, SAU 2008.",saltwater,30,N,18,N,98,W,81,W,tropical,1137,215,0,25,0,N,93,0,W
+1741,Hiwassee River,River (basin),"Georgia, North Carolina, Tennessee in USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1187,Holston River,River (basin),"Virginia and Tennessee, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1162,Hudson River,River (basin),"New York and New Jersey, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,7,2,0,nan,nan,None,nan,nan,None
+1729,James River,River (basin),"Virginia, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,4,2,0,nan,nan,None,nan,nan,None
+1102,Juan de Fuca Strait,Sea/Bay/Gulf,"Part of the Salish Sea.  Between Vancouver Island (British Columbia, Canada) and the Olympic Peninsula (Washington state, USA).",saltwater,48,N,48,N,125,W,122,W,None,162,57,-1,48,20,N,123,8,W
+1180,Kansas River,River (basin),"Kansas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1708,Kentucky River,River (basin),"Kentucky, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1132,Klamath River,River (basin),"Oregon and California, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,2,0,nan,nan,None,nan,nan,None
+1727,Lake Champlain,Lake,USA (New Yorok/Vermont) and Canada (Quebec),freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1166,Lake Erie,Lake,"Great Lakes, North America",freshwater,nan,None,nan,None,nan,None,nan,None,None,35,15,0,nan,nan,None,nan,nan,None
+1165,Lake Huron,Lake,"Great Lakes, North America",freshwater,nan,None,nan,None,nan,None,nan,None,None,32,15,0,nan,nan,None,nan,nan,None
+1164,Lake Michigan,Lake,"Great Lakes, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,27,11,0,nan,nan,None,nan,nan,None
+1167,Lake Ontario,Lake,"Great Lakes, North America",freshwater,nan,None,nan,None,nan,None,nan,None,None,38,15,0,nan,nan,None,nan,nan,None
+1719,Lake Pontchartrain,Lake,"\tLouisiana, USA",brackish,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1163,Lake Superior,Lake,"Great Lakes, North America",freshwater,nan,None,nan,None,nan,None,nan,None,None,26,10,0,nan,nan,None,nan,nan,None
+1716,Little Miami,River (basin),Ohio in the United States,freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1738,Little Red River,River (basin),"Arkansas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,2,2,0,nan,nan,None,nan,nan,None
+1750,Little River,River (basin),USA,freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+577,Mississippi Complex,River (basin),North America,freshwater,nan,None,nan,None,nan,None,nan,None,Subtropical,160,17,0,nan,nan,None,nan,nan,None
+28,Mississippi River,River (basin),Central USA,freshwater,48,N,28,N,96,W,88,W,temperate,231,34,0,37,59,N,90,0,W
+15,Mississippi-Missouri,River (basin),central USA,freshwater,49,N,28,N,112,W,88,W,temperate,12,6,0,38,47,N,90,6,W
+27,Missouri River,River (basin),Central and northwest central USA,freshwater,49,N,38,N,112,W,90,W,temperate,158,27,0,44,36,N,100,38,W
+1707,Mohawk River,River (basin),"New York, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1747,Muskingum River,River (basin),"Ohio, USA",None,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1749,Navidad River,River (basin),"Texas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+375,Nearctic,Zoogeographic realm,North America except tropical Mexico (south of isthmus).,freshwater,80,N,16,N,167,W,53,W,Temperate,1240,68,0,42,0,N,108,0,W
+1185,Neuse River,River (basin),"North Carolina, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,4,1,0,nan,nan,None,nan,nan,None
+1186,New River,River (basin),"North Carolina, Virginia, and West Virginia, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,12,2,0,nan,nan,None,nan,nan,None
+233,Northeast U.S. Continental Shelf,Sea/Bay/Gulf,"LME SAU No 7. Northwest Atlantic; northeastern part of US coast, from Cape Hatteras northwards. LME2002, LME2006, SAU 2008.",saltwater,45,N,38,N,72,W,60,W,temperate,644,192,-1,39,2,N,70,27,W
+1733,Nueces River,River (basin),"Texas, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1152,Ohio River,River (basin),"Pennsylvania, Ohio, West Virginia, Kentucky, Indiana, Illinois in the USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,17,3,0,nan,nan,None,nan,nan,None
+1781,Ouachita River,River (basin),"Arkansas and Louisiana, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,2,1,0,nan,nan,None,nan,nan,None
+571,Pacific Coastal Complex,River (basin),North America,freshwater,nan,None,nan,None,nan,None,nan,None,Subtropical,48,13,0,nan,nan,None,nan,nan,None
+9,Pacific Ocean,Sea/Bay/Gulf,"FAO areas 67, 61, 71, 77, 81, 87, 88.",saltwater,66,N,75,S,136,W,153,E,Subtropical,8833,426,0,10,0,N,175,0,E
+1736,Pajaro River,River (basin),"California, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,1,1,0,nan,nan,None,nan,nan,None
+1810,Pearl River (USA),River (basin),"Mississippi and Louisiana, USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,2,0,nan,nan,None,nan,nan,None
+1140,Pecos River,River (basin),New Mexico and Texas in USA,freshwater,nan,None,nan,None,nan,None,nan,None,None,7,2,0,nan,nan,None,nan,nan,None
+1157,Pee Dee River,River (basin),North Carolina and South Carolina in the USA,freshwater,nan,None,nan,None,nan,None,nan,None,None,8,2,0,nan,nan,None,nan,nan,None
+556,Penobscot Bay,Sea/Bay/Gulf,Maine coast,saltwater,nan,None,nan,None,nan,None,nan,None,Temperate,25,16,0,44,11,N,68,55,W
+1139,Platte River,River (basin),"Nebraska, USA\r\nColorado, Nebraska and Wyoming in USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,2,0,nan,nan,None,nan,nan,None
+1155,Potomac River,River (basin),"West Virginia, Maryland, Virginia and Washington in the USA",freshwater,nan,None,nan,None,nan,None,nan,None,None,3,1,0,nan,nan,None,nan,nan,None
+1068,Puget Sound,Sea/Bay/Gulf,"Part of the Salish Sea.  Inlet of the Northeast Pacific in the Olympia Peninsula, Washington state, USA.",brackish,48,N,47,N,124,W,122,W,None,191,52,-1,47,50,N,122,26,W
