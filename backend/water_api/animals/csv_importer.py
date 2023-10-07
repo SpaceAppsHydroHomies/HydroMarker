@@ -1,13 +1,19 @@
-# import os
-# import django
+"""
+File to parse the ecosystem data into the SQLite Database.
+Note: append the absolute path to the water_api directory if you wish to use this script.
+"""
 
-# # Replace 'yourprojectname' with the actual name of your Django project.
-# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "water_api.settings")
+import os, sys, csv, django
 
-# # Initialize Django.
-# django.setup()
-import csv
-from models import Ecosystem
+sys.path.append(
+    "/mnt/c/Users/nicho/OneDrive/Desktop/github/changethislater/backend/water_api"
+)
+os.environ["DJANGO_SETTINGS_MODULE"] = "water_api.settings"
+
+django.setup()
+
+# WARNING: Order is important. Do not import any Django models before calling django.setup()
+from animals.models import Ecosystem
 
 
 def import_data_from_csv(csv_file_path):
@@ -15,7 +21,7 @@ def import_data_from_csv(csv_file_path):
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             # Create an instance of the Ecosystem model and populate it with data from the CSV
-            ecosystem = Ecosystem(
+            ecosystem = Ecosystem.objects.create(
                 E_CODE=row["E_CODE"],
                 EcosystemName=row["EcosystemName"],
                 EcosystemType=row["EcosystemType"],
@@ -54,7 +60,6 @@ def import_data_from_csv(csv_file_path):
                 else None,
                 EastWestFill=row["EastWestFill"],
             )
-            ecosystem.save()  # Save the instance to the database
 
 
 if __name__ == "__main__":
