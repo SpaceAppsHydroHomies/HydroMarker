@@ -21,8 +21,17 @@ def get_biological_data(HUC):
             if index_type is not None and index_type.text == "QHEI":
                 qhei_score = index_score.text
                 break  # Stop searching once QHEI is found
+        if qhei_score is None:
+            for index in root.findall(".//wqx:BiologicalHabitatIndex", namespaces=ns):
+                index_type = index.find(".//wqx:IndexTypeIdentifier", namespaces=ns)
+                index_score = index.find(".//wqx:IndexScoreNumeric", namespaces=ns)
+                
+                if index_type is not None and index_score is not None:
+                    qhei_score = index_score.text
+                    break  # Stop searching once QHEI is found
         if qhei_score is not None:
             qhei_score = round(float(qhei_score))
+        
         # Return None if the data does not contain QHEI or if there was an issue with the request
         return qhei_score
     return None
