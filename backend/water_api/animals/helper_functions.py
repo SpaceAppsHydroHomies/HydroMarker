@@ -69,12 +69,14 @@ def scrape_fishbase_fish(id: int) -> dict:
                     fish_details["Fishing Vulnerability"] = (
                         env.get_text().split(":")[1].strip()
                     )
+
                 if "Date assessed" in env.get_text():
                     fish_details["IUCN Red List Status"] = (
                         env.get_text().split(";")[0].strip().replace("\xa0", " ")
                     )
                 else:
                     fish_details["IUCN Red List Status"] = "Not Evaluated"
+
                 if (
                     "Traumatogenic" in env.get_text()
                     or "Potential" in env.get_text()

@@ -28,3 +28,23 @@ class Ecosystem(models.Model):
 
     def __str__(self):
         return self.EcosystemName
+
+
+class EndangeredAnimal(models.Model):
+    FishBaseId = models.IntegerField(unique=True)
+    ScientificName = models.CharField(max_length=255)
+    CommonName = models.CharField(max_length=255, blank=True, default=None, null=True)
+    Salinity = models.CharField(max_length=255, blank=True, default=None, null=True)
+    Resilience = models.CharField(max_length=255, blank=True, default=None, null=True)
+    FishingVulnerability = models.CharField(
+        max_length=255, blank=True, default=None, null=True
+    )
+    IUCNRedListStatus = models.CharField(
+        max_length=255, blank=True, default=None, null=True
+    )
+    ThreatsToHumans = models.CharField(
+        max_length=255, blank=True, default=None, null=True
+    )
+
+    def __str__(self):
+        return self.CommonName

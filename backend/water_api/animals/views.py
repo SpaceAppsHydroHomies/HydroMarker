@@ -13,6 +13,7 @@ def get_endangered_species_data(response, ecosystem_name: str) -> JsonResponse:
         for key, value in scrape_ecosystem.items():
             scrape_fish = scrape_fishbase_fish(key)
             fish_data = {}
+            fish_data["Id"] = key
             fish_data["Scientific Name"] = value
             fish_data["Common Name"] = scrape_fish.get("Common Name")
             fish_data["Salinity"] = scrape_fish.get("Salinity")

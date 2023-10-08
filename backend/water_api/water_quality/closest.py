@@ -2,6 +2,7 @@ from fuzzywuzzy import fuzz
 import re
 import requests
 
+
 def closest_location(latitude, longitude):
     """
     Params : latitude (float), longitude(float)
@@ -23,15 +24,19 @@ def closest_location(latitude, longitude):
         response = requests.get(url, timeout=timeout)
         if response.status_code == 200:
             data = response.json()
-            if len(data['features']) >= 1:
-                for i in range (0, len(data['features'])):
-                    location_name = data['features'][i]['properties']['MonitoringLocationName']
-                    pattern = r'\b(r\*r|r|lake|LK)\b'
-                    if re.search (pattern, location_name,re.IGNORECASE):
-                        loc_huc = data['features'][i]['properties']['HUCEightDigitCode']
-                        loc_lat = data['features'][i]['geometry']['coordinates'][1]
-                        loc_long = data['features'][i]['geometry']['coordinates'][0]
-                        loc_name = data['features'][i]['properties']['MonitoringLocationName']
+            if len(data["features"]) >= 1:
+                for i in range(0, len(data["features"])):
+                    location_name = data["features"][i]["properties"][
+                        "MonitoringLocationName"
+                    ]
+                    pattern = r"\b(r\*r|r|lake|LK)\b"
+                    if re.search(pattern, location_name, re.IGNORECASE):
+                        loc_huc = data["features"][i]["properties"]["HUCEightDigitCode"]
+                        loc_lat = data["features"][i]["geometry"]["coordinates"][1]
+                        loc_long = data["features"][i]["geometry"]["coordinates"][0]
+                        loc_name = data["features"][i]["properties"][
+                            "MonitoringLocationName"
+                        ]
                         loc_found = True
         else:
             print(f"Request failed with status code: {response.status_code}")
