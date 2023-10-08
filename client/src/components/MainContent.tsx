@@ -24,10 +24,10 @@ const MainContent = (longlati: any) => {
     })();
   }, []);
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4">
       <h1 className="text-4xl font-bold">{waterQualityData.displayName}</h1>
       <WaterQuality waterQualityScore={waterQualityData.score} />
-      <div className="flex flex-col md:flex-row gap-2">
+      <div className="flex flex-col md:flex-row gap-4">
         <EndangeredSlider waterQuality={waterQualityData} />
         <Conservation />
       </div>

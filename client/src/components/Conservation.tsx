@@ -26,7 +26,7 @@ const Conservation = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Conservation Advice!</CardTitle>
+        <CardTitle>Environment Preservation</CardTitle>
       </CardHeader>
       <CardContent>
         <div dangerouslySetInnerHTML={{ __html: formattedMessages }} />
