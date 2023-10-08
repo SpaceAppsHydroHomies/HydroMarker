@@ -5,7 +5,7 @@ def closest_location(latitude, longitude):
     """
     Params : latitude (float), longitude(float)
     Take a request to find all bodies within x miles (radius)
-    Limit at 10 miles, double each iteration
+    Limit at 65 miles, double each iteration
     Returns location HUC, latitude and longitude
     """
 
