@@ -36,7 +36,6 @@ def scrape_fishbase_ecosystem(e_code: int) -> dict:
                     species_data[species_id] = species_name
 
             # Return the dictionary of species IDs and names
-            print(species_data)
             return species_data
 
     except Exception as e:
@@ -92,7 +91,6 @@ def scrape_fishbase_fish(id: int) -> dict:
             common_name = soup.find_all("title")
             for name in common_name:
                 fish_details["Common Name"] = name.get_text().split(",")[1].strip()
-            print(fish_details)
         return fish_details
 
     except Exception as e:

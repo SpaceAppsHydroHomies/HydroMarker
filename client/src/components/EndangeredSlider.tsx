@@ -12,18 +12,24 @@ import { Button } from "./ui/button";
 
 const images = ["cat1.jpg", "cat2.jpg", "cat3.jpg", "cat4.jpg"];
 
+// type EndangeredSliderProps = {
+//     Id: number;
+//     "Scientific Name": string;
+//     "Common Name": string;
+//     Salinity: string;
+//     Resilience: string;
+//     "Fishing Vulnerability": string;
+//     "IUCN Red List Status": string;
+//     "Threats To Humans": string;
+// };
+
 type EndangeredSliderProps = {
-    Id: number;
-    "Scientific Name": string;
-    "Common Name": string;
-    Salinity: string;
-    Resilience: string;
-    "Fishing Vulnerability": string;
-    "IUCN Red List Status": string;
-    "Threats To Humans": string;
+    name: "Arkansas River"
 };
 
-const EndangeredSlider = () => {
+
+const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
+    name = "Arkansas River"
     // Effect to fetch data when the component mounts
     const [endangeredSpecies, setEndangeredSpecies] = useState<
         EndangeredSliderProps[]
@@ -32,8 +38,7 @@ const EndangeredSlider = () => {
     useEffect(() => {
         (async () => {
             // Define the URL for the API endpoint
-            const apiUrl =
-                "http://127.0.0.1:8000/animals/get_endangered_species_data/Alabama%20River";
+            const apiUrl = `http://127.0.0.1:8000/animals/get_endangered_species_data/${name}`;
             try {
                 // Fetch data from the API using the fetch() function
                 const data = await fetch(apiUrl)

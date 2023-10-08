@@ -24,7 +24,7 @@ def get_endangered_species_data(response, ecosystem_name: str) -> JsonResponse:
             fish_data = {}
             fish_data["Id"] = item.FishBaseId
             fish_data["Scientific Name"] = item.ScientificName
-            fish_data["Common Name"] = item.CommonName
+            fish_data["Common Name"] = str(item.CommonName).split(":")[0]
             fish_data["Salinity"] = item.Salinity
             fish_data["Resilience"] = item.Resilience
             fish_data["Fishing Vulnerability"] = item.FishingVulnerability
