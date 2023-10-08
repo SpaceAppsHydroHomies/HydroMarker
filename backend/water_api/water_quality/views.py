@@ -1,5 +1,7 @@
 from django.http import JsonResponse
-from water_quality import closest
+from water_quality.closest import closest_location
+from water_quality.score import get_biological_data
+
 
 def index(response):
     return JsonResponse({'test': 'data'})
@@ -14,7 +16,7 @@ def get_data(request):
         if lat > 180 or lat < -180 or long < -180 or long > 180:
             return JsonResponse({'status': 400, 'reason': 'latitude and longitude should be between -180 and 180'})
         # TODO: Get the HUC of the closest body of water
-        HUC,revised_lat,revised_long = closest.closest_location(lat,long)
+        huc, huc_lat, huc_long, huc_name= closest_location(lat,long)
         # TODO: Return the data for that HUC
         # TODO: Get the colloquial name of the body of water we're in
-        return JsonResponse({'lat': lat, 'long': long})
+        return JsonResponse({'lat': huc_lat, 'long': huc_long})

@@ -1,3 +1,4 @@
+import re
 import requests
 
 def closest_location(latitude, longitude):
@@ -13,21 +14,26 @@ def closest_location(latitude, longitude):
     loc_huc = ""
     loc_lat = 0
     loc_long = 0
+    loc_name = ""
     loc_found = False
 
-    while radius < 10 and loc_found is False:
-        url = f"https://www.waterqualitydata.us/data/Station/search?lat={latitude}&long={longitude}&within={radius}&siteType=Lake, Reservoir, Impoundment&siteType=Estuary&siteType=Ocean&siteType=Spring&siteType=Stream&mimeType=geojson"
+    while radius < 65 and loc_found is False:
+        url = f"https://www.waterqualitydata.us/data/Station/search?lat={latitude}&long={longitude}&within={radius}&siteType=Lake, Reservoir, Impoundment&siteType=Stream&mimeType=geojson"
         response = requests.get(url, timeout=timeout)
         if response.status_code == 200:
             data = response.json()
-            print(len(data['features']))
             if len(data['features']) >= 1:
-                loc_huc = data['features'][0]['properties']['HUCEightDigitCode']
-                loc_lat = data['features'][0]['geometry']['coordinates'][1]
-                loc_long = data['features'][0]['geometry']['coordinates'][0]
-                loc_found = True
+                for i in range (0, len(data['features'])):
+                    location_name = data['features'][i]['properties']['MonitoringLocationName']
+                    pattern = r'\b(r\*r|r|lake|LK)\b'
+                    if re.search (pattern, location_name,re.IGNORECASE):
+                        loc_huc = data['features'][i]['properties']['HUCEightDigitCode']
+                        loc_lat = data['features'][i]['geometry']['coordinates'][1]
+                        loc_long = data['features'][i]['geometry']['coordinates'][0]
+                        loc_name = data['features'][i]['properties']['MonitoringLocationName']
+                        loc_found = True
         else:
             print(f"Request failed with status code: {response.status_code}")
             break
         radius *= 2
-    return loc_huc,loc_lat,loc_long
+    return loc_huc,loc_lat,loc_long,loc_name
