@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from water_quality.closest import closest_location
+from water_quality.score import get_biological_data
 
 
 def index(response):
@@ -22,7 +23,8 @@ def get_data(request):
                 }
             )
         # TODO: Get the HUC of the closest body of water
-        HUC, revised_lat, revised_long = closest_location(lat, long)
+        huc, huc_lat, huc_long, huc_name = closest_location(lat, long)
         # TODO: Return the data for that HUC
+        water_score = get_biological_data(huc)
         # TODO: Get the colloquial name of the body of water we're in
-        return JsonResponse({"lat": lat, "long": long})
+        return JsonResponse({"lat": huc_lat, "long": huc_long, "score": water_score})
