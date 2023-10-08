@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main # Adjust the branch name as needed
-
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
