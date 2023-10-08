@@ -21,7 +21,8 @@ def get_biological_data(HUC):
             if index_type is not None and index_type.text == "QHEI":
                 qhei_score = index_score.text
                 break  # Stop searching once QHEI is found
-                
-        return round(float(qhei_score))
-    # Return None if the data does not contain QHEI or if there was an issue with the request
+        if qhei_score is not None:
+            qhei_score = round(float(qhei_score))
+        # Return None if the data does not contain QHEI or if there was an issue with the request
+        return qhei_score
     return None
