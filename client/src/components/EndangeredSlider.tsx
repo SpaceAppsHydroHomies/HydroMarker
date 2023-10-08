@@ -25,79 +25,6 @@ type EndangeredSliderProps = {
 };
 
 const EndangeredSlider = (WaterQuality: any) => {
-<<<<<<< HEAD
-  // Effect to fetch data when the component mounts
-  const [endangeredSpecies, setEndangeredSpecies] = useState<
-    EndangeredSliderProps[]
-  >([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const name = WaterQuality.waterQuality.name;
-  useEffect(() => {
-    (async () => {
-      // Define the URL for the API endpoint
-      //   const apiUrl = `http://127.0.0.1:8000/animals/get_endangered_species_data/${name}`;
-      const apiUrl = `http://127.0.0.1:8000/animals/get_endangered_species_data/Arkansas River`;
-      try {
-        // Fetch data from the API using the fetch() function
-        const data = await fetch(apiUrl)
-          .then((response) => response.json())
-          .then((responseData) => {
-            // Set the state variable using the data returned from the API
-            setEndangeredSpecies(responseData["Endangered Species"]);
-          });
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    })();
-  }, [WaterQuality.waterQuality.name]);
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Endangered Species</CardTitle>
-      </CardHeader>
-      <CardContent style={{height:"80px"}}>
-        <div className="flex overflow-x-auto">
-          {endangeredSpecies.map((species, key) => (
-            <Dialog key={key}>
-              <DialogTrigger>
-                {!species["Threats To Humans"] ? (
-                  <Button variant="destructive" onClick={() => setIsOpen(true)}>
-                    {species["Common Name"]}
-                  </Button>
-                ) : (
-                  <Button variant="secondary" onClick={() => setIsOpen(true)}>
-                    {species["Common Name"]}
-                  </Button>
-                )}
-              </DialogTrigger>
-              <DialogContent >
-                <DialogHeader>
-                  <DialogTitle>{species["Common Name"]}</DialogTitle>
-                </DialogHeader>
-                <DialogDescription>
-                  <ul>
-                    {species["IUCN Red List Status"] !== "Not Evaluated" ? (
-                      <li>
-                        Endangered Status: {species["IUCN Red List Status"]}
-                      </li>
-                    ) : null}
-                    <li>Scientist Name: {species["Scientific Name"]}</li>
-                    <li>Threat to Humans: {species["Threats To Humans"]}</li>
-                    <li>Resilience: {species["Resilience"]}</li>
-                    <li>Salinity: {species["Salinity"]}</li>
-                    <li>
-                      Fishing Vulnerability: {species["Fishing Vulnerability"]}
-                    </li>
-                  </ul>
-                </DialogDescription>
-              </DialogContent>
-            </Dialog>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
-  );
-=======
     // Effect to fetch data when the component mounts
     const [endangeredSpecies, setEndangeredSpecies] = useState<
         EndangeredSliderProps[]
@@ -127,7 +54,7 @@ const EndangeredSlider = (WaterQuality: any) => {
             <CardHeader>
                 <CardTitle>Endangered Species</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent style={{ height: "80px" }}>
                 <div className="flex overflow-x-auto">
                     {endangeredSpecies?.map((species, key) => (
                         <Dialog key={key}>
@@ -169,7 +96,6 @@ const EndangeredSlider = (WaterQuality: any) => {
             </CardContent>
         </Card>
     );
->>>>>>> 7af6ae23bf696ff5370bba8fe066e47d57bf69d3
 };
 
 export default EndangeredSlider;
