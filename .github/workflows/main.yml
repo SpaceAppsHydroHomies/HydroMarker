@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: 16 # You can change the Node.js version as needed
 
+      # change directory to client
+      - name: Change directory to client
+        run: cd client
+
       - name: Install dependencies
         run: npm install
 
