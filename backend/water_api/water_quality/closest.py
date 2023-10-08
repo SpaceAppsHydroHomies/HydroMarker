@@ -2,6 +2,12 @@ from fuzzywuzzy import fuzz
 import re
 import requests
 
+def replace_word(match):
+    word = match.group(0)
+    if word =="R":
+        return "RIVER"
+    elif word == "LK":
+        return "LAKE"
 
 def closest_location(latitude, longitude):
     """
@@ -42,6 +48,9 @@ def closest_location(latitude, longitude):
             print(f"Request failed with status code: {response.status_code}")
             break
         radius *= 2
+    check_pattern = r'\b(R|LK)\b'
+    loc_name = re.sub(check_pattern, replace_word, loc_name)
+
     return loc_huc,loc_lat,loc_long,loc_name
 
 
