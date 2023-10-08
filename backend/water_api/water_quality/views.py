@@ -1,17 +1,17 @@
 from django.http import JsonResponse
-from water_quality.closest import closest_location, fuzzy_search
-from water_quality.score import get_biological_data
+from .closest import closest_location, fuzzy_search
+from .score import get_biological_data_refactor
 
 
 def index(response):
     return JsonResponse({"test": "data"})
 
 
-def get_data(request,lat,long):
+def get_data(request, lat, long):
     if request.method == "GET":
         lat = float(lat)
         long = float(long)
-        
+
         if not isinstance(lat, (float, int)) or not isinstance(long, (float, int)):
             return JsonResponse(
                 {"status": 400, "reason": "lat or long was not an int or float"},
@@ -22,11 +22,22 @@ def get_data(request,lat,long):
                 {
                     "status": 400,
                     "reason": "latitude and longitude should be between -180 and 180",
+                },
+                status=400
+            )
+        location = closest_location(lat, long)
+        if not location or isinstance(location, int):
+            return JsonResponse(
+                {
+                    "status": 400,
+                    "reason": "No bodies of water found near the latitude and longitude"
                 }
             )
-        # TODO: Get the HUC of the closest body of water
-        huc, huc_lat, huc_long, huc_name = closest_location(lat, long)
         # TODO: Return the data for that HUC
-        water_score = get_biological_data(huc)
-        # TODO: Get the colloquial name of the body of water we're in
-        return JsonResponse({'lat': huc_lat, 'long': huc_long, 'score' : water_score, 'displayName' : huc_name, 'name' : fuzzy_search(huc_name)})
+        water_score = get_biological_data_refactor(location['huc'], location['state'], location["water_code"].upper())
+        return JsonResponse({'lat': location['lat'], 'long': location['long'],
+                             'score': water_score,
+                             'displayName': location['name'],
+                             'name': fuzzy_search(location['name']),
+                             'huc': location['huc'],
+                             'water_code': location['water_code']})

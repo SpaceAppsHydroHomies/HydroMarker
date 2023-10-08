@@ -16,19 +16,17 @@ def closest_location(latitude, longitude):
     Params : latitude (float), longitude(float)
     Take a request to find all bodies within x miles (radius)
     Limit at 65 miles, double each iteration
-    Returns location HUC, latitude and longitude
+    Returns loc HUC, latitude and longitude
     """
 
     radius = 0.25
     timeout = 10
-    loc_huc = ""
-    loc_lat = 0
-    loc_long = 0
-    loc_name = ""
+    loc = {}
     loc_found = False
 
-    while radius < 65 and loc_found is False:
-        url = f"https://www.waterqualitydata.us/data/Station/search?lat={latitude}&long={longitude}&within={radius}&siteType=Lake, Reservoir, Impoundment&siteType=Stream&mimeType=geojson"
+    while radius < 65 and not loc_found:
+        print(radius)
+        url = f"https://www.waterqualitydata.us/data/Station/search?lat={latitude}&long={longitude}&within={radius}&siteType=Lake, Reservoir, Impoundment&siteType=Stream&mimeType=geojson&providers=NWIS"
         response = requests.get(url, timeout=timeout)
         if response.status_code == 200:
             data = response.json()
@@ -39,22 +37,23 @@ def closest_location(latitude, longitude):
                     ]
                     pattern = r"\b(r\*r|r|river|lake|LK)\b"
                     if re.search(pattern, location_name, re.IGNORECASE):
-                        loc_huc = data["features"][i]["properties"]["HUCEightDigitCode"]
-                        loc_lat = data["features"][i]["geometry"]["coordinates"][1]
-                        loc_long = data["features"][i]["geometry"]["coordinates"][0]
-                        loc_name = data["features"][i]["properties"][
-                            "MonitoringLocationName"
-                        ]
+                        loc["huc"] = data["features"][i]["properties"]["HUCEightDigitCode"]
+                        loc["lat"] = data["features"][i]["geometry"]["coordinates"][1]
+                        loc["long"] = data["features"][i]["geometry"]["coordinates"][0]
+                        loc["name"] = data["features"][i]["properties"]["MonitoringLocationName"]
+                        loc["state"] = data["features"][i]["properties"]["StateName"]
+                        loc["water_code"] = data["features"][i]["properties"]["ResolvedMonitoringLocationTypeName"]
                         loc_found = True
         else:
             print(f"Request failed with status code: {response.status_code}")
-            break
+            return -1
         radius *= 2
     check_pattern = r'\b(R|LK)\b'
-    temp_name = re.sub(check_pattern, replace_word, loc_name)
+    print(loc)
+    temp_name = re.sub(check_pattern, replace_word, loc["name"])
     strip_pattern = r'(River|Lake).*'
-    good_loc_name = re.sub(strip_pattern, r'\1', temp_name, flags=re.IGNORECASE)
-    return loc_huc,loc_lat,loc_long,good_loc_name.upper()
+    loc["name"] = re.sub(strip_pattern, r'\1', temp_name, flags=re.IGNORECASE)
+    return loc
 
 
 def fuzzy_search(search: str):
