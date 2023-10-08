@@ -35,7 +35,7 @@ def closest_location(latitude, longitude):
                     location_name = data["features"][i]["properties"][
                         "MonitoringLocationName"
                     ]
-                    pattern = r"\b(r\*r|r|lake|LK)\b"
+                    pattern = r"\b(r\*r|r|river|lake|LK)\b"
                     if re.search(pattern, location_name, re.IGNORECASE):
                         loc_huc = data["features"][i]["properties"]["HUCEightDigitCode"]
                         loc_lat = data["features"][i]["geometry"]["coordinates"][1]
@@ -49,9 +49,10 @@ def closest_location(latitude, longitude):
             break
         radius *= 2
     check_pattern = r'\b(R|LK)\b'
-    loc_name = re.sub(check_pattern, replace_word, loc_name)
-
-    return loc_huc,loc_lat,loc_long,loc_name
+    temp_name = re.sub(check_pattern, replace_word, loc_name)
+    strip_pattern = r'(River|Lake).*'
+    good_loc_name = re.sub(strip_pattern, r'\1', temp_name, flags=re.IGNORECASE)
+    return loc_huc,loc_lat,loc_long,good_loc_name.upper()
 
 
 def fuzzy_search(search: str):
