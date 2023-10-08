@@ -10,47 +10,21 @@ import {
   useMap,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 import "leaflet-geosearch/dist/geosearch.css";
-import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
-import { setTimeout } from "timers/promises";
+import { marker } from "leaflet";
 
-// const SearchControl = () => {
-//   const map = useMap();
-//   const provider = new OpenStreetMapProvider();
-
-//   const searchControl = new GeoSearchControl({
-//     provider,
-//     autoCompleteDelay: 300,
-//     showMarker: true,
-//     showPopup: false,
-//     marker: {
-//       icon: new L.Icon.Default(),
-//       draggable: false,
-//     },
-//   });
-
-//   useEffect(() => {
-//     map.addControl(searchControl);
-//   }, [map, searchControl]);
-
-//   return null;
-// };
-
-const GetLocation = () => {
-  const [position, setPosition] = useState<LatLng>({
-    lat: 37.719,
-    lng: -97.293,
-  });
+const GetLocation = (longlati: any, setLonglati: any) => {
   const map = useMapEvents({
     click: (e) => {
+      map.flyTo(e.latlng, map.getZoom());
       console.log(e.latlng);
+      setLonglati(e.latlng);
     },
   });
-  return position;
+  return null;
 };
 
-const Map = () => {
+const Map = (longlati: any) => {
   const mapRef = useRef(null);
   const [center, setCenter] = useState<LatLng>({
     lat: 37.719,
@@ -105,7 +79,7 @@ const Map = () => {
           transition={{ delay: 0.2 }}
         >
           <MapContainer
-            center={center}
+            center={longlati.longlati}
             zoom={13}
             ref={mapRef}
             className="w-full h-full rounded-xl"
@@ -114,10 +88,10 @@ const Map = () => {
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={center} draggable={true}>
-              <Popup></Popup>
+            <Marker position={longlati.longlati} draggable={false}>
+              <Popup>marked here!</Popup>
             </Marker>
-            {/* <GetLocation /> */}
+            <GetLocation longlati={longlati} />
           </MapContainer>
         </motion.div>
       )}

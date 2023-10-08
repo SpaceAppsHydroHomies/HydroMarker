@@ -9,32 +9,29 @@ import {
     DialogTrigger,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
+import WaterQuality from "./WaterQuality";
 
 const images = ["cat1.jpg", "cat2.jpg", "cat3.jpg", "cat4.jpg"];
 
-// type EndangeredSliderProps = {
-//     Id: number;
-//     "Scientific Name": string;
-//     "Common Name": string;
-//     Salinity: string;
-//     Resilience: string;
-//     "Fishing Vulnerability": string;
-//     "IUCN Red List Status": string;
-//     "Threats To Humans": string;
-// };
-
 type EndangeredSliderProps = {
-    name: "Arkansas River"
+    Id: number;
+    "Scientific Name": string;
+    "Common Name": string;
+    Salinity: string;
+    Resilience: string;
+    "Fishing Vulnerability": string;
+    "IUCN Red List Status": string;
+    "Threats To Humans": string;
 };
 
-
-const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
-    name = "Arkansas River"
+const EndangeredSlider = (WaterQuality: any) => {
     // Effect to fetch data when the component mounts
     const [endangeredSpecies, setEndangeredSpecies] = useState<
         EndangeredSliderProps[]
     >([]);
     const [isOpen, setIsOpen] = useState(false);
+    const name = WaterQuality.waterQuality.name;
+    console.log(name)
     useEffect(() => {
         (async () => {
             // Define the URL for the API endpoint
@@ -51,15 +48,15 @@ const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
                 console.error("Error fetching data:", error);
             }
         })();
-    }, []);
+    }, [WaterQuality.waterQuality.name]);
     return (
         <Card>
             <CardHeader>
                 <CardTitle>Endangered Species</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent style={{ height: "80px" }}>
                 <div className="flex overflow-x-auto">
-                    {endangeredSpecies.map((species, key) => (
+                    {endangeredSpecies?.map((species, key) => (
                         <Dialog key={key}>
                             <DialogTrigger>
                                 {!species["Threats To Humans"] ? (
@@ -79,13 +76,17 @@ const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
                                 <DialogDescription>
                                     <ul>
                                         {species["IUCN Red List Status"] !== "Not Evaluated" ? (
-                                            <li>Endangered Status: {species["IUCN Red List Status"]}</li>
+                                            <li>
+                                                Endangered Status: {species["IUCN Red List Status"]}
+                                            </li>
                                         ) : null}
-                                        <li>Scientist Name: {species["Scientific Name"]}</li>
-                                        <li>Threat to Humans: {species["Threats To Humans"]}</li>
-                                        <li>Resilience: {species["Resilience"]}</li>
-                                        <li>Salinity: {species["Salinity"]}</li>
-                                        <li>Fishing Vulnerability: {species["Fishing Vulnerability"]}</li>
+                                        <li><strong>Scientist Name</strong>: {species["Scientific Name"]}</li>
+                                        <li><strong>Threat to Humans</strong>: {species["Threats To Humans"]}</li>
+                                        <li><strong>Resilience</strong>: {species["Resilience"]}</li>
+                                        <li><strong>Salinity</strong>: {species["Salinity"]}</li>
+                                        <li>
+                                            <strong>Fishing Vulnerability</strong>: {species["Fishing Vulnerability"]}
+                                        </li>
                                     </ul>
                                 </DialogDescription>
                             </DialogContent>
@@ -93,7 +94,6 @@ const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
                     ))}
                 </div>
             </CardContent>
-
         </Card>
     );
 };

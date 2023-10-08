@@ -9,6 +9,10 @@ import SearchDialog from "./components/SearchDialog";
 
 function App() {
   const [isSearchDialogOpen, setIsSearchDialogOpen] = useState(false);
+  const [longlati, setLonglati] = useState<LatLng>({
+    lat: 37.719,
+    lng: -97.293,
+  });
   return (
     <>
       <Helmet>
@@ -20,10 +24,12 @@ function App() {
       <ThemeProvider>
         <div className="container min-h-screen">
           <Header />
-          <MainContent />
+          <MainContent longlati={longlati} />
         </div>
       </ThemeProvider>
-      <Map />
+      <div>
+        <Map longlati={longlati} setLonglati={setLonglati} />
+      </div>
       <SearchDialog
         open={isSearchDialogOpen}
         onClose={() => setIsSearchDialogOpen(!isSearchDialogOpen)}
