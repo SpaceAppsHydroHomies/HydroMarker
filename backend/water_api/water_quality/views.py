@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-import backend.water_api.water_api.closest as closest
+from water_quality import closest
 
 def index(response):
     return JsonResponse({'test': 'data'})
