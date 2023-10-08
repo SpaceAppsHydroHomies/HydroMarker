@@ -80,12 +80,12 @@ const EndangeredSlider = (WaterQuality: any) => {
                                                 Endangered Status: {species["IUCN Red List Status"]}
                                             </li>
                                         ) : null}
-                                        <li>Scientist Name: {species["Scientific Name"]}</li>
-                                        <li>Threat to Humans: {species["Threats To Humans"]}</li>
-                                        <li>Resilience: {species["Resilience"]}</li>
-                                        <li>Salinity: {species["Salinity"]}</li>
+                                        <li><strong>Scientist Name</strong>: {species["Scientific Name"]}</li>
+                                        <li><strong>Threat to Humans</strong>: {species["Threats To Humans"]}</li>
+                                        <li><strong>Resilience</strong>: {species["Resilience"]}</li>
+                                        <li><strong>Salinity</strong>: {species["Salinity"]}</li>
                                         <li>
-                                            Fishing Vulnerability: {species["Fishing Vulnerability"]}
+                                            <strong>Fishing Vulnerability</strong>: {species["Fishing Vulnerability"]}
                                         </li>
                                     </ul>
                                 </DialogDescription>
