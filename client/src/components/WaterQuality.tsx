@@ -7,7 +7,6 @@ import { RxInfoCircled } from "react-icons/rx";
 import {
     Card,
     CardContent,
-    CardDescription,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
@@ -27,7 +26,7 @@ const WaterQuality: React.FC<WaterQualityProps> = ({ waterQualityScore }) => {
                             <HoverCardTrigger>
                                 <RxInfoCircled size={22} />
                             </HoverCardTrigger>
-                            <HoverCardContent>
+                            <HoverCardContent style={{ fontSize: 15 }}>
                                 The Qualitative Habitat Evaluation Index (QHEI) is a scientific measure used by environmental researches and agencies
                                 to evaluate and monitor the quality of aquatic and riparian habitats.
                             </HoverCardContent>
@@ -38,7 +37,7 @@ const WaterQuality: React.FC<WaterQualityProps> = ({ waterQualityScore }) => {
                     <Progress value={waterQualityScore} />
                 </CardContent>
             </Card>
-        </div>
+        </div >
     );
 };
 
