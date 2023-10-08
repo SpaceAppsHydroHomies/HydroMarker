@@ -25,10 +25,31 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3
+        uses: actions/upload-artifact@v2
         with:
-          branch: gh-pages # Adjust this branch name if needed
-          folder: dist # The directory where Vite's build output is located
+          name: production-files # Adjust this branch name if needed
+          folder: ./client/dist # The directory where Vite's build output is located
 
       - name: Cleanup
         run: rm -rf dist # Remove the dist folder after deployment (optional)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Download production files
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files # Adjust this branch name if needed
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: ./client/dist # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch
+          token: ${{ secrets.GITHUB_TOKEN }} # The GitHub API token to use for deployment. This should be set to ${{ secrets.GITHUB_TOKEN }}.
