@@ -7,4 +7,5 @@ urlpatterns = [
         views.get_endangered_species_data,
         name="get_endangered_species_data",
     ),
+    path("get_ecosystems/", views.get_ecosystems, name="get_ecosystems"),
 ]

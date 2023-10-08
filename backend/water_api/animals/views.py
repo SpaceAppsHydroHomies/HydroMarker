@@ -75,3 +75,13 @@ def get_endangered_species_data(response, ecosystem_name: str) -> JsonResponse:
         return JsonResponse({})
 
     return JsonResponse(response)
+
+
+def get_ecosystems(request):
+    ecosystems = Ecosystem.objects.all()
+    response = {}
+    list_of_ecosystems = []
+    for ecosystem in ecosystems:
+        list_of_ecosystems.append(ecosystem.EcosystemName)
+    response["Ecosystems"] = list_of_ecosystems
+    return JsonResponse(response)
