@@ -57,7 +57,7 @@ const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
             <CardHeader>
                 <CardTitle>Endangered Species</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent style={{height:"80px"}}>
                 <div className="flex overflow-x-auto">
                     {endangeredSpecies.map((species, key) => (
                         <Dialog key={key}>
@@ -72,7 +72,7 @@ const EndangeredSlider: React.FC<EndangeredSliderProps> = ({ name }) => {
                                     </Button>
                                 )}
                             </DialogTrigger>
-                            <DialogContent>
+                            <DialogContent >
                                 <DialogHeader>
                                     <DialogTitle>{species["Common Name"]}</DialogTitle>
                                 </DialogHeader>
