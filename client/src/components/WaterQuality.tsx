@@ -12,17 +12,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "./ui/progress";
-import { useState } from "react";
 
 const WaterQuality = () => {
   const waterQualityScore = 69;
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <div>
       <Card>
         <CardHeader>
           <CardTitle className="flex justify-between">
-            <h2> Water Quality Score</h2>
+            WQI: {waterQualityScore}
             <HoverCard openDelay={100} closeDelay={200}>
               <HoverCardTrigger>
                 <RxInfoCircled size={22} />
@@ -33,9 +31,6 @@ const WaterQuality = () => {
         </CardHeader>
         <CardContent>
           <Progress value={waterQualityScore} />
-        </CardContent>
-        <CardContent>
-          water so good :) quality is at: {waterQualityScore}
         </CardContent>
       </Card>
     </div>

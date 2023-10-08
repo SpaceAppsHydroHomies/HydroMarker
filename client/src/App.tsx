@@ -18,10 +18,10 @@ function App() {
         <link rel="manifest" href="/favicon_io/site.webmanifest" />
       </Helmet>
       <ThemeProvider>
-        <body className="container min-h-screen">
+        <div className="container min-h-screen">
           <Header />
           <MainContent />
-        </body>
+        </div>
       </ThemeProvider>
       <Map />
       <SearchDialog
