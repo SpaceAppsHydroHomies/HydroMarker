@@ -44,6 +44,7 @@ def closest_location(latitude, longitude):
         radius *= 2
     return loc_huc,loc_lat,loc_long,loc_name
 
+
 def fuzzy_search(search: str):
     """Does a fuzzy search on the waterbodies dictionary and returns the closest match."""
     waterbodies = {
@@ -131,9 +132,14 @@ def fuzzy_search(search: str):
     }
 
     high_score = ("", 0)
-    for waterbody in waterbodies:
-        score = fuzz.ratio(search.lower(), waterbody.lower())
-        if score > high_score[1]:
-            high_score = (waterbody, score)
+    threshold = 50
 
-    return waterbodies[high_score[0]]
+    for waterbody in waterbodies:
+        if f' {waterbody.lower()}' in search.lower():
+            return waterbodies[waterbody]
+        else:
+            score = fuzz.ratio(search.lower(), waterbody.lower())
+            if score > high_score[1]:
+                high_score = (waterbody, score)
+
+    return waterbodies[high_score[0]] if high_score[1] > threshold else None
